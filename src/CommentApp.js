@@ -10,6 +10,10 @@ class CommentApp extends Component {
         }
     }
     handleSubmitComment(comment) {
+        console.log(comment);
+        if (!comment) return
+        if (!comment.userName) return alert('請輸入用戶名')
+        if (!comment.content) return alert('請輸入內容')
         this.state.comments.push(comment);
         console.log(comment);
         this.setState({
